@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/* `dark:` はメディアクエリではなく `<html class="dark">` で明示的に切り替える */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Noto Sans JP', system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  /* デジタル庁デザインシステムの推奨: 本文は行高150%以上を確保して可読性を担保する */
+  line-height: 1.6;
+}
+
+/* フォーカスリングをアクセシビリティ配慮で明示的に表示(JIS X 8341-3:2016 対応) */
+:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+/* スキップリンク: 通常は視覚的に隠し、フォーカス時のみ表示する */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.5rem;
+  z-index: 50;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}

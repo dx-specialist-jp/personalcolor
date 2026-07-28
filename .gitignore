@@ -1,0 +1,17 @@
+node_modules
+dist
+dist-ssr
+*.local
+*.tsbuildinfo
+
+# 自己ホスト用に取得するMediaPipeのバイナリ資産（ビルド時に自動取得するためコミット不要）
+public/mediapipe/
+public/models/
+
+# エディタ/OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# ログ
+npm-debug.log*
